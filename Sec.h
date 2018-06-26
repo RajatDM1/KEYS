@@ -66,6 +66,15 @@ namespace Sec{
         s << e;
         return s.str();
     }
+
+    void WriteAppLog( const std::string &s)
+    {
+        //ios - InputOutputStream app- Appends
+        std::ofstream file("AppLog.txt", std::ios::app);
+        file<< "[" << Sec::DateTime().GetDateTimeString()<<"]"<<
+        "\n"<<s<<std::endl<<"\n";
+        file.close();
+    }
 }
 
 
