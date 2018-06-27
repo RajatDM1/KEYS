@@ -1,5 +1,8 @@
 #include <iostream>
 #include<windows.h>
+#include "Sec.h"
+#include "Base64.h"
+#include "Constants.h"
 using namespace std;
 
 int main()

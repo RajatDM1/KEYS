@@ -4,6 +4,7 @@
 #include <string>
 #include <ctime>
 #include <sstream>
+#include <fstream>
 
 //using this function to create strings form any type of data
 namespace Sec{
@@ -26,15 +27,17 @@ namespace Sec{
             H = info->tm_hour;
             S = info->tm_sec;
         }
-        DateTime(int D, int m, int y, int M, int H, int S) : D{D}, m{m}, y{y}, M{M}, H{H}, S{S} {}
-        DateTime(int D, int m, int y) : D{D}, m{m}, y{y}, H{0}, M{0}, S{0} {}
+        //DateTime(int D, int m, int y, int M, int H, int S) : D{D}, m{m}, y{y}, M{M}, H{H}, S{S} {}
+        DateTime(int D, int m, int y, int M, int H, int S) : D(D), m(m), y(y), M(M), H(H), S(S) {}
+        //DateTime(int D, int m, int y) : D{D}, m{m}, y{y}, H{0}, M{0}, S{0} {}
+        DateTime(int D, int m, int y) : D(D), m(m), y(y), M(0), H(0), S(0) {}
 
 
-        DateTime Now{} const
+        DateTime Now() const
         {
             return DateTime();
         }
-        int D, m, y, H, M, S;
+        int D, m, y, M, H, S;
 
         //returning the date in the format DD.mm.YYYY
         std::string GetDateString() const

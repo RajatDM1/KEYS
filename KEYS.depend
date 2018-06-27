@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1530023406 source:e:\study\keys\main.cpp
+	<iostream>
+	<windows.h>
+	"Sec.h"
+	"Base64.h"
+	"Constants.h"
+
+1530024006 e:\study\keys\sec.h
+	<string>
+	<ctime>
+	<sstream>
+	<fstream>
+
+1530023871 e:\study\keys\base64.h
+	<vector>
+	<string>
+
+1530017342 e:\study\keys\constants.h
+	<map>
+	<string>
+

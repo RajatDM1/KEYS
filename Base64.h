@@ -37,7 +37,7 @@ namespace Base64
 
         for(const auto &c : s)
         {
-            val = (val << 8) + c//shifting left by 8 places, like val = val*2^8;
+            val = (val << 8) + c;//shifting left by 8 places, like val = val*2^8;
             bits+= 8;
             while(bits>=0)
             {

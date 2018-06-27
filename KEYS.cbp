@@ -32,6 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Base64.h" />
+		<Unit filename="Constants.h" />
+		<Unit filename="KEYS.h" />
+		<Unit filename="Sec.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Sec.h" />
+		<Unit filename="first.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
