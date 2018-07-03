@@ -1,12 +1,13 @@
 # depslib dependency file v1.0
-1530023406 source:e:\study\keys\main.cpp
+1530447816 source:e:\study\keys\main.cpp
 	<iostream>
 	<windows.h>
 	"Sec.h"
 	"Base64.h"
 	"Constants.h"
+	"timer.h"
 
-1530024006 e:\study\keys\sec.h
+1530024078 e:\study\keys\sec.h
 	<string>
 	<ctime>
 	<sstream>
@@ -19,4 +20,8 @@
 1530017342 e:\study\keys\constants.h
 	<map>
 	<string>
+
+1530447820 e:\study\keys\timer.h
+	<thread>
+	<chrono>
 

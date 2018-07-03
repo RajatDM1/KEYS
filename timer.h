@@ -35,15 +35,15 @@ public:
 
     Time(){}
 
-    Timer(const std::function<void(void)> &f) : funct (f) {}
+    //this constructor will accept a pointer to a function and then we'll initialize the function pointer to f
+    Timer(const std::function<void(void)> &f) : funct (f){}
 
     Timer(const std::function<void(void)> &f,
         const unsigned long &i,
-        const long repeat = Timer::Infinite) : funct (f)
+        const long repeat = Timer::infinite) : funct (f),
                                                 interval(std::chrono::milliseconds(i),
                                                     CallNumber(repeat) {}
 
-    //using this function to start the timer
     void Start(bool async = true)
     {
         if(IsAlive())
@@ -51,23 +51,24 @@ public:
         Alive = true;
         repeat_count = CallNumber;
         if(async)
-            Thread = std::thread(ThreadFunc, this);
+            Thread = std::thread(ThreadFunc, this);//Thread variable 
         else
             this->ThreadFunc();
-    }      
+    }
 
+    //method to manually stop the timer
     void Stop()
     {
         Alive = false;
-        Thread.join();//there will not be concurrent exectuion on one main thread
-    }                                          
+        Thread.join();
+    }
 
-    void SetFunction(const std::function<void(void)> &f)
+    void setFunction(const std::function<void(void)> &f)
     {
         funct = f;
     }
 
-    //finds out if timer is running or not
+    //whether the timer is running or not
     bool IsAlive() const {return Alive;}
 
     //sets the number of repeat instances
@@ -75,7 +76,8 @@ public:
     {
         if(Alive)
             return;
-        CallNumber = r;
+        else
+            CallNumber = r;
     }
 
     //get how many iterations are left
@@ -89,6 +91,12 @@ public:
             return;
         interval = std::chrono::milliseconds(i);
     }
-    
+
+    unsigned long interval() const{return interval.count();}
+
+    const std::function<void(void)> &Function() const
+    {
+        return funct;
+    }
 };
 #endif // TIMER_H

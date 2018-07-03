@@ -35,9 +35,9 @@
 		<Unit filename="Base64.h" />
 		<Unit filename="Constants.h" />
 		<Unit filename="KEYS.h" />
-		<Unit filename="Sec.c">
+		<!-- <Unit filename="Sec.c">
 			<Option compilerVar="CC" />
-		</Unit>
+		</Unit> -->
 		<Unit filename="Sec.h" />
 		<Unit filename="first.h" />
 		<Unit filename="io.h" />

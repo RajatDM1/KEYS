@@ -3,6 +3,7 @@
 #include "Sec.h"
 #include "Base64.h"
 #include "Constants.h"
+#include "timer.h"
 using namespace std;
 
 int main()
